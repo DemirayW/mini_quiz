@@ -1,0 +1,85 @@
+PROJECT: mini-quiz
+AUTHOR: Demiray (251478074)
+VERSION: v1
+DATE: 2026-03-19
+
+========================================
+OVERVIEW
+========================================
+
+mini-quiz is a command-line quiz manager.
+It allows users to store quiz questions in a text file.
+
+Each question includes:
+- id
+- question text
+- correct answer
+
+All data is stored in a directory called .miniquiz/
+in the current working directory.
+
+========================================
+COMMANDS
+========================================
+
+--- init ---
+Usage: python miniquiz.py init
+Creates a .miniquiz/ directory and an empty questions.dat file.
+If already exists, print "Already initialized"
+
+--- add ---
+Usage: python miniquiz.py add "Question?" "Answer"
+Adds a new question.
+Each question has:
+id (auto increment), question, answer
+
+Output:
+"Added question #<id>"
+
+--- list ---
+Usage: python miniquiz.py list
+Prints all questions:
+[1] What is 2+2?
+
+If no questions:
+"No questions found."
+
+--- quiz ---
+Usage: python miniquiz.py quiz
+(Not implemented in v0)
+
+========================================
+DATA FORMAT
+========================================
+
+File: .miniquiz/questions.dat
+
+Format:
+id|question|answer
+
+Example:
+1|What is 2+2?|4
+
+========================================
+ERROR HANDLING
+========================================
+
+- If not initialized:
+"Not initialized. Run: python miniquiz.py init"
+
+- Unknown command:
+"Unknown command"
+
+- Missing arguments:
+"Usage: python miniquiz.py <command>"
+
+
+--- delete ---
+Usage: python miniquiz.py delete 1
+Deletes a question by id.
+
+Output:
+"Deleted question #1"
+
+If not found:
+"Question not found"
